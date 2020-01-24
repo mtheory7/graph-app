@@ -28,11 +28,6 @@ function App() {
   const ETHEREUM = 1;
   const DOGECOIN = 10000;
 
-
-  function money_round(num) {
-    return Math.ceil(num * 100) / 100;
-  }
-
 /*  useEffect(() => {
     axios.get('https://www.kitco.com/gold-price-today-usa/', {
       crossdomain: true
@@ -54,7 +49,7 @@ function App() {
       pricePerAsset = DOGECOIN_USD;
     }
 
-    return money_round(pricePerAsset * amount);
+    return (pricePerAsset * amount);
   }
 
   function calcMetalValueUSD(numberOfGrams, metalType) {
@@ -69,7 +64,7 @@ function App() {
       pricePerOzt = TROY_OZT_USD_PLATINUM;
     }
 
-    return (money_round((numberOfGrams / GRAMS_IN_OZT) * pricePerOzt));
+    return ((numberOfGrams / GRAMS_IN_OZT) * pricePerOzt);
   }
 
   return (
@@ -84,7 +79,7 @@ function App() {
           </div>
           <div>
             <h3>USD Value</h3>
-            <PieChart data={[
+            <PieChart round={2} zeros={true} prefix="$" data={[
               ["Gold", calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold')],
               ["Silver", calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver')],
               ["Platinum", calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum')],
