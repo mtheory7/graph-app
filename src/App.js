@@ -3,10 +3,6 @@ import { PieChart } from 'react-chartkick';
 import 'chart.js';
 import './App.css';
 
-function calcValue(amount) {
-  return amount
-}
-
 function App() {
   return (
     <div className="App">
