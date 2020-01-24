@@ -8,18 +8,39 @@ function App() {
   const TROY_OZT_USD_GOLD = 1572.36;
   const TROY_OZT_USD_SILVER = 18.053;
   const TROY_OZT_USD_PLATINUM = 1010.56;
+  const BITCOIN_USD = 8471.50;
+  const ETHEREUM_USD = 162.08;
+  const DOGECOIN_USD = 0.0022858;
 
   const GRAMS_IN_OZT = 31.1034768;
 
   const GRAMS_OF_GOLD = 16.38;
   const GRAMS_OF_SILVER = 715.37;
   const GRAMS_OF_PLATINUM = 4.35;
+  const BITCOIN = 0.025;
+  const ETHEREUM = 1;
+  const DOGECOIN = 10000;
 
   function money_round(num) {
     return Math.ceil(num * 100) / 100;
   }
 
-  function calcValueUSD(numberOfGrams, metalType) {
+  function calcCryptoValueUSD(amount, cryptoType) {
+    let pricePerAsset = 0;
+    if (cryptoType === 'Bitcoin') {
+      pricePerAsset = BITCOIN_USD;
+    }
+    if (cryptoType === 'Ethereum') {
+      pricePerAsset = ETHEREUM_USD;
+    }
+    if (cryptoType === 'Dogecoin') {
+      pricePerAsset = DOGECOIN_USD;
+    }
+
+    return money_round(pricePerAsset * amount);
+  }
+
+  function calcMetalValueUSD(numberOfGrams, metalType) {
     let pricePerOzt = 0;
     if (metalType === 'Gold') {
       pricePerOzt = TROY_OZT_USD_GOLD;
@@ -46,11 +67,14 @@ function App() {
           </div>
           <div>
             <h3>USD Value</h3>
-            <PieChart data={[["Gold", calcValueUSD(GRAMS_OF_GOLD, 'Gold')],
-              ["Silver", calcValueUSD(GRAMS_OF_SILVER, 'Silver')],
-              ["Platinum",
-                calcValueUSD(GRAMS_OF_PLATINUM, 'Platinum')]]}
-                      colors={['#D4AF37', '#e5e4e2', '#C0C0C0']}/>
+            <PieChart data={[
+              ["Gold", calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold')],
+              ["Silver", calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver')],
+              ["Platinum", calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum')],
+              ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
+              ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')],
+              ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')]]
+            } colors={['#D4AF37', '#e5e4e2', '#C0C0C0', '#ff9900', '#3c3c3d', '#e1b303']}/>
           </div>
         </header>
       </div>
