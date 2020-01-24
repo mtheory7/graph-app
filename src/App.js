@@ -5,6 +5,11 @@ import './App.css';
 
 function App() {
 
+/*
+  const [goldPrice, setGoldPrice] = useState({});
+*/
+
+  // Prices per asset
   const TROY_OZT_USD_GOLD = 1572.36;
   const TROY_OZT_USD_SILVER = 18.053;
   const TROY_OZT_USD_PLATINUM = 1010.56;
@@ -12,8 +17,10 @@ function App() {
   const ETHEREUM_USD = 162.08;
   const DOGECOIN_USD = 0.0022858;
 
+  // Conversion factors
   const GRAMS_IN_OZT = 31.1034768;
 
+  // Assets
   const GRAMS_OF_GOLD = 16.38;
   const GRAMS_OF_SILVER = 715.37;
   const GRAMS_OF_PLATINUM = 4.35;
@@ -21,9 +28,19 @@ function App() {
   const ETHEREUM = 1;
   const DOGECOIN = 10000;
 
+
   function money_round(num) {
     return Math.ceil(num * 100) / 100;
   }
+
+/*  useEffect(() => {
+    axios.get('https://www.kitco.com/gold-price-today-usa/', {
+      crossdomain: true
+    }).then(({data}) => {
+      setGoldPrice(data);
+    });
+    console.log(goldPrice);
+  });*/
 
   function calcCryptoValueUSD(amount, cryptoType) {
     let pricePerAsset = 0;
@@ -63,7 +80,7 @@ function App() {
             <PieChart
                 data={[["Gold", GRAMS_OF_GOLD], ["Silver", GRAMS_OF_SILVER],
                   ["Platinum", GRAMS_OF_PLATINUM]]}
-                colors={['#D4AF37', '#e5e4e2', '#C0C0C0']}/>
+                colors={['#d4af37', '#e5e4e2', '#c0c0c0']}/>
           </div>
           <div>
             <h3>USD Value</h3>
@@ -74,7 +91,7 @@ function App() {
               ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
               ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')],
               ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')]]
-            } colors={['#D4AF37', '#e5e4e2', '#C0C0C0', '#ff9900', '#3c3c3d', '#e1b303']}/>
+            } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#3c3c3d', '#e1b303']}/>
           </div>
         </header>
       </div>
