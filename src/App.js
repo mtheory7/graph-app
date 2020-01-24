@@ -89,8 +89,8 @@ function App() {
               ["Silver", calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver')],
               ["Platinum", calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum')],
               ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
-              ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')],
-              ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')]]
+              ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')],
+              ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')]]
             } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#3c3c3d', '#e1b303']}/>
           </div>
         </header>
