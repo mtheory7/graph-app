@@ -15,6 +15,10 @@ function App() {
   const GRAMS_OF_SILVER = 715.37;
   const GRAMS_OF_PLATINUM = 4.35;
 
+  function money_round(num) {
+    return Math.ceil(num * 100) / 100;
+  }
+
   function calcValueUSD(numberOfGrams, metalType) {
     let pricePerOzt = 0;
     if (metalType === 'Gold') {
@@ -27,26 +31,31 @@ function App() {
       pricePerOzt = TROY_OZT_USD_PLATINUM;
     }
 
-    return ((numberOfGrams / GRAMS_IN_OZT) * pricePerOzt);
+    return (money_round((numberOfGrams / GRAMS_IN_OZT) * pricePerOzt));
   }
 
   return (
       <div className="App">
         <header className="App-header">
-          <PieChart label="Mass"
-                    data={[["Gold", GRAMS_OF_GOLD], ["Silver", GRAMS_OF_SILVER],
-                      ["Platinum", GRAMS_OF_PLATINUM]]}
-                    colors={['#D4AF37', '#e5e4e2', '#C0C0C0']}/>
-          <PieChart label="USD Value"
-                    data={[["Gold", calcValueUSD(GRAMS_OF_GOLD, 'Gold')],
-                      ["Silver", calcValueUSD(GRAMS_OF_SILVER, 'Silver')],
-                      ["Platinum",
-                        calcValueUSD(GRAMS_OF_PLATINUM, 'Platinum')]]}
-                    colors={['#D4AF37', '#e5e4e2', '#C0C0C0']}/>
+          <div>
+            <h3>Mass</h3>
+            <PieChart label="Mass"
+                      data={[["Gold", GRAMS_OF_GOLD], ["Silver", GRAMS_OF_SILVER],
+                        ["Platinum", GRAMS_OF_PLATINUM]]}
+                      colors={['#D4AF37', '#e5e4e2', '#C0C0C0']}/>
+          </div>
+          <div>
+                <h3>USD</h3>
+                <PieChart label="USD Value"
+                          data={[["Gold", calcValueUSD(GRAMS_OF_GOLD, 'Gold')],
+                            ["Silver", calcValueUSD(GRAMS_OF_SILVER, 'Silver')],
+                            ["Platinum",
+                              calcValueUSD(GRAMS_OF_PLATINUM, 'Platinum')]]}
+                          colors={['#D4AF37', '#e5e4e2', '#C0C0C0']}/>
+          </div>
         </header>
       </div>
   );
 }
 
 export default App;
-
