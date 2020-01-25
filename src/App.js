@@ -86,7 +86,7 @@ function App() {
               ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
               ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')],
               ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')]]
-            } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#3c3c3d', '#e1b303']}/>
+            } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d']}/>
           </div>
         </header>
       </div>
