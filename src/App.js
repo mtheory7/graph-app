@@ -29,6 +29,7 @@ function App() {
 
     useEffect(() => {
         axios.get('http://www.mtheory7.com:17071/pricedata/').then(({data}) => {
+            console.log(data);
             setPriceData(data);
         });
     }, []);
