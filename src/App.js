@@ -9,12 +9,19 @@ function App() {
     const [priceData, setPriceData] = useState({});
 
     // Prices per asset
-    const TROY_OZT_USD_GOLD = (priceData === undefined) ? 1572.36 : priceData.gold;
-    const TROY_OZT_USD_SILVER = (priceData === undefined) ? 18.053 : priceData.silver;
-    const TROY_OZT_USD_PLATINUM = (priceData === undefined) ? 1010.56 : priceData.platinum;
-    const BITCOIN_USD = (priceData === undefined) ? 8471.50 : priceData.btc;
-    const ETHEREUM_USD = (priceData === undefined) ? 162.08 : priceData.eth;
-    const DOGECOIN_USD = (priceData === undefined) ? 0.0022858 : priceData.doge;
+/*    const TROY_OZT_USD_GOLD = (priceData === undefined) ? 1571.45 : priceData.gold;
+    const TROY_OZT_USD_SILVER = (priceData === undefined) ? 18.09 : priceData.silver;
+    const TROY_OZT_USD_PLATINUM = (priceData === undefined) ? 1005.0 : priceData.platinum;
+    const BITCOIN_USD = (priceData === undefined) ? 8331.0 : priceData.btc;
+    const ETHEREUM_USD = (priceData === undefined) ? 160.38 : priceData.eth;
+    const DOGECOIN_USD = (priceData === undefined) ? 0.002242 : priceData.doge;*/
+
+    const TROY_OZT_USD_GOLD = 1571.45;
+    const TROY_OZT_USD_SILVER = 18.09;
+    const TROY_OZT_USD_PLATINUM = 1005.0;
+    const BITCOIN_USD = 8331.0;
+    const ETHEREUM_USD = 160.38;
+    const DOGECOIN_USD = 0.002242;
 
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
@@ -27,12 +34,11 @@ function App() {
     const ETHEREUM = 1;
     const DOGECOIN = 10000;
 
-    useEffect(() => {
-        axios.get('https://www.mtheory7.com/pricedata').then(({data}) => {
-            console.log(data);
+/*    useEffect(() => {
+        axios.get('http://www.mtheory7.com:17071/pricedata/').then(({data}) => {
             setPriceData(data);
         });
-    }, []);
+    }, []);*/
 
     function calcCryptoValueUSD(amount, cryptoType) {
         let pricePerAsset = 0;
