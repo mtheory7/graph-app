@@ -28,7 +28,7 @@ function App() {
     const DOGECOIN = 10000;
 
     useEffect(() => {
-        axios.get('http://www.mtheory7.com:17071/pricedata/').then(({data}) => {
+        axios.get('https://www.mtheory7.com/pricedata').then(({data}) => {
             console.log(data);
             setPriceData(data);
         });
