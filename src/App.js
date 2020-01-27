@@ -16,12 +16,12 @@ function App() {
     const ETHEREUM_USD = (priceData === undefined) ? 160.38 : priceData.eth;
     const DOGECOIN_USD = (priceData === undefined) ? 0.002242 : priceData.doge;*/
 
-    const TROY_OZT_USD_GOLD = 1571.45;
-    const TROY_OZT_USD_SILVER = 18.09;
-    const TROY_OZT_USD_PLATINUM = 1005.0;
-    const BITCOIN_USD = 8331.0;
-    const ETHEREUM_USD = 160.38;
-    const DOGECOIN_USD = 0.002242;
+    const TROY_OZT_USD_GOLD = 1579.50;
+    const TROY_OZT_USD_SILVER = 18.200;
+    const TROY_OZT_USD_PLATINUM = 999.30;
+    const BITCOIN_USD = 8644.74;
+    const ETHEREUM_USD = 167.03;
+    const DOGECOIN_USD = 0.0022860;
 
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
@@ -30,7 +30,7 @@ function App() {
     const GRAMS_OF_GOLD = 16.38;
     const GRAMS_OF_SILVER = 715.37;
     const GRAMS_OF_PLATINUM = 4.35;
-    const BITCOIN = 0.025;
+    const BITCOIN = 0.05;
     const ETHEREUM = 1;
     const DOGECOIN = 10000;
 
