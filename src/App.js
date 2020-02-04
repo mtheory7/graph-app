@@ -70,6 +70,19 @@ function App() {
         return ((numberOfGrams / GRAMS_IN_OZT) * pricePerOzt);
     }
 
+    function calcTotal() {
+        return parseFloat(
+            calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold') + calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver') + calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum') +
+            calcCryptoValueUSD(BITCOIN, 'Bitcoin') + calcCryptoValueUSD(DOGECOIN, 'Dogecoin') + calcCryptoValueUSD(ETHEREUM, 'Ethereum')
+        ).toFixed(2);
+    }
+
+    function calcRatio() {
+        return (
+            (calcCryptoValueUSD(BITCOIN, 'Bitcoin') + calcCryptoValueUSD(DOGECOIN, 'Dogecoin') + calcCryptoValueUSD(ETHEREUM, 'Ethereum')) / (calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold') + calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver') + calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum'))
+        ).toFixed(2);
+    }
+
     return (
         <div className="App">
             <header className="App-header">
@@ -90,6 +103,10 @@ function App() {
                         ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')],
                         ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')]]
                     } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d']}/>
+                </div>
+                <div>
+                    <p>Total === ${calcTotal()}</p>
+                    <p>Crypto : Metal === {calcRatio()} : 1</p>
                 </div>
             </header>
         </div>
