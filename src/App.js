@@ -92,13 +92,13 @@ function App() {
     function calcCryptoRatio() {
         return (
             calcCryptoTotal() / calcMetalTotal()
-        ).toFixed(2);
+        ).toFixed(3);
     }
 
     function calcStockRatio() {
         return (
             calcStockTotal() / calcMetalTotal()
-        ).toFixed(2);
+        ).toFixed(3);
     }
 
     return (
