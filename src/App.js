@@ -8,14 +8,7 @@ function App() {
 
     const [priceData, setPriceData] = useState({});
 
-    // Prices per asset
-/*    const TROY_OZT_USD_GOLD = (priceData === undefined) ? 1571.45 : priceData.gold;
-    const TROY_OZT_USD_SILVER = (priceData === undefined) ? 18.09 : priceData.silver;
-    const TROY_OZT_USD_PLATINUM = (priceData === undefined) ? 1005.0 : priceData.platinum;
-    const BITCOIN_USD = (priceData === undefined) ? 8331.0 : priceData.btc;
-    const ETHEREUM_USD = (priceData === undefined) ? 160.38 : priceData.eth;
-    const DOGECOIN_USD = (priceData === undefined) ? 0.002242 : priceData.doge;*/
-
+    // Prices
     const TROY_OZT_USD_GOLD = 1572.07;
     const TROY_OZT_USD_SILVER = 17.729;
     const TROY_OZT_USD_PLATINUM = 968.74;
@@ -36,12 +29,6 @@ function App() {
     const BITCOIN = 0.05;
     const ETHEREUM = 1.1;
     const DOGECOIN = 10000;
-
-/*    useEffect(() => {
-        axios.get('http://www.mtheory7.com:17071/pricedata/').then(({data}) => {
-            setPriceData(data);
-        });
-    }, []);*/
 
     function calcCryptoValueUSD(amount, cryptoType) {
         let pricePerAsset = 0;
@@ -139,11 +126,11 @@ function App() {
                     } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d', '#00acee', '#00B0B9', '#026cb6']}/>
                 </div>
                 <div>
-                    <p>Total ${calcTotal()}</p>
-                    <p>Stocks ${calcStockTotal()}</p>
-                    <p>Crypto ${calcCryptoTotal()}</p>
-                    <p>Metal ${calcMetalTotal()}</p>
-                    <p>Ratio(Stocks:Crypto:Metal) => {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
+                    <p>Total: ${calcTotal()}</p>
+                    <p>Stocks: ${calcStockTotal()}</p>
+                    <p>Crypto: ${calcCryptoTotal()}</p>
+                    <p>Metal: ${calcMetalTotal()}</p>
+                    <p>Ratio: ({calcStockRatio()} : {calcCryptoRatio()} : 1)</p>
                 </div>
             </header>
         </div>
