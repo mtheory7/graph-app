@@ -81,7 +81,7 @@ function App() {
     }
 
     function calcTotal() {
-        return calcMetalTotal() + calcStockTotal() + calcCryptoTotal();
+        return +calcMetalTotal() + +calcStockTotal() + +calcCryptoTotal();
     }
 
     function calcMetalTotal() {
@@ -143,7 +143,7 @@ function App() {
                     <p>Stocks ${calcStockTotal()}</p>
                     <p>Crypto ${calcCryptoTotal()}</p>
                     <p>Metal ${calcMetalTotal()}</p>
-                    <p>Ratio(Stocks:Crypto:Metal) {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
+                    <p>Ratio(Stocks:Crypto:Metal) => {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
                 </div>
             </header>
         </div>
