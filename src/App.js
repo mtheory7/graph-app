@@ -125,7 +125,7 @@ function App() {
                         colors={['#d4af37', '#e5e4e2', '#c0c0c0']}/>
                 </div>*/}
                 <div>
-                    <h3>USD Value</h3>
+                    <h3>Portfolio</h3>
                     <PieChart round={2} zeros={true} prefix="$" data={[
                         ["Gold", calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold')],
                         ["Silver", calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver')],
