@@ -135,8 +135,11 @@ function App() {
                     } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d', '#00acee', '#00B0B9', '#026cb6']}/>
                 </div>
                 <div>
-                    <p>Total === ${calcTotal()}</p>
-                    <p>Stocks : Crypto : Metal === {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
+                    <p>Total ${calcTotal()}</p>
+                    <p>Stocks ${calcStockTotal()}</p>
+                    <p>Crypto ${calcCryptoTotal()}</p>
+                    <p>Metal ${calcMetalTotal()}</p>
+                    <p>Stocks : Crypto : Metal   {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
                 </div>
             </header>
         </div>
