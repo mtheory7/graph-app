@@ -81,21 +81,25 @@ function App() {
     }
 
     function calcTotal() {
-        return parseFloat(
-            calcMetalTotal() + calcStockTotal() + calcCryptoTotal()
-        ).toFixed(2);
+        return calcMetalTotal() + calcStockTotal() + calcCryptoTotal();
     }
 
     function calcMetalTotal() {
-        return (calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold') + calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver') + calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum'));
+        return parseFloat(
+            calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold') + calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver') + calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum')
+        ).toFixed(2);
     }
 
     function calcCryptoTotal() {
-        return (calcCryptoValueUSD(BITCOIN, 'Bitcoin') + calcCryptoValueUSD(DOGECOIN, 'Dogecoin') + calcCryptoValueUSD(ETHEREUM, 'Ethereum'));
+        return parseFloat(
+            calcCryptoValueUSD(BITCOIN, 'Bitcoin') + calcCryptoValueUSD(DOGECOIN, 'Dogecoin') + calcCryptoValueUSD(ETHEREUM, 'Ethereum')
+        ).toFixed(2);
     }
 
     function calcStockTotal() {
-        return (calcStockValueUSD(1, "Twitter") + calcStockValueUSD(1, "GE") + calcStockValueUSD(1, "FitBit"));
+        return parseFloat(
+            calcStockValueUSD(1, "Twitter") + calcStockValueUSD(1, "GE") + calcStockValueUSD(1, "FitBit")
+        ).toFixed(2);
     }
 
     function calcCryptoRatio() {
@@ -139,7 +143,7 @@ function App() {
                     <p>Stocks ${calcStockTotal()}</p>
                     <p>Crypto ${calcCryptoTotal()}</p>
                     <p>Metal ${calcMetalTotal()}</p>
-                    <p>Stocks : Crypto : Metal   {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
+                    <p>Ratio(Stocks:Crypto:Metal) => {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
                 </div>
             </header>
         </div>
