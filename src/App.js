@@ -16,12 +16,15 @@ function App() {
     const ETHEREUM_USD = (priceData === undefined) ? 160.38 : priceData.eth;
     const DOGECOIN_USD = (priceData === undefined) ? 0.002242 : priceData.doge;*/
 
-    const TROY_OZT_USD_GOLD = 1565.80;
-    const TROY_OZT_USD_SILVER = 17.791;
-    const TROY_OZT_USD_PLATINUM = 961.87;
-    const BITCOIN_USD = 9794.56;
-    const ETHEREUM_USD = 218.68;
-    const DOGECOIN_USD = 0.00264329;
+    const TROY_OZT_USD_GOLD = 1572.07;
+    const TROY_OZT_USD_SILVER = 17.729;
+    const TROY_OZT_USD_PLATINUM = 968.74;
+    const BITCOIN_USD = 9770.29;
+    const ETHEREUM_USD = 221.38;
+    const DOGECOIN_USD = 0.00283294;
+    const TWITTER_USD = 37.13;
+    const GE_USD = 12.88;
+    const FITBIT_USD = 6.62;
 
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
@@ -70,29 +73,53 @@ function App() {
         return ((numberOfGrams / GRAMS_IN_OZT) * pricePerOzt);
     }
 
+    function calcStockValueUSD(numberOfShares, share) {
+        if (share === "FitBit") return numberOfShares * FITBIT_USD;
+        if (share === "Twitter") return numberOfShares * TWITTER_USD;
+        if (share === "GE") return numberOfShares * GE_USD;
+        return 0;
+    }
+
     function calcTotal() {
         return parseFloat(
-            calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold') + calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver') + calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum') +
-            calcCryptoValueUSD(BITCOIN, 'Bitcoin') + calcCryptoValueUSD(DOGECOIN, 'Dogecoin') + calcCryptoValueUSD(ETHEREUM, 'Ethereum')
+            calcMetalTotal() + calcStockTotal() + calcCryptoTotal()
         ).toFixed(2);
     }
 
-    function calcRatio() {
+    function calcMetalTotal() {
+        return (calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold') + calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver') + calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum'));
+    }
+
+    function calcCryptoTotal() {
+        return (calcCryptoValueUSD(BITCOIN, 'Bitcoin') + calcCryptoValueUSD(DOGECOIN, 'Dogecoin') + calcCryptoValueUSD(ETHEREUM, 'Ethereum'));
+    }
+
+    function calcStockTotal() {
+        return (calcStockValueUSD(1, "Twitter") + calcStockValueUSD(1, "GE") + calcStockValueUSD(1, "FitBit"));
+    }
+
+    function calcCryptoRatio() {
         return (
-            (calcCryptoValueUSD(BITCOIN, 'Bitcoin') + calcCryptoValueUSD(DOGECOIN, 'Dogecoin') + calcCryptoValueUSD(ETHEREUM, 'Ethereum')) / (calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold') + calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver') + calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum'))
+            calcCryptoTotal() / calcTotal()
+        ).toFixed(2);
+    }
+
+    function calcStockRatio() {
+        return (
+            calcStockTotal() / calcTotal()
         ).toFixed(2);
     }
 
     return (
         <div className="App">
             <header className="App-header">
-                <div>
+{/*                <div>
                     <h3>Mass (grams)</h3>
                     <PieChart
                         data={[["Gold", GRAMS_OF_GOLD], ["Silver", GRAMS_OF_SILVER],
                             ["Platinum", GRAMS_OF_PLATINUM]]}
                         colors={['#d4af37', '#e5e4e2', '#c0c0c0']}/>
-                </div>
+                </div>*/}
                 <div>
                     <h3>USD Value</h3>
                     <PieChart round={2} zeros={true} prefix="$" data={[
@@ -101,12 +128,15 @@ function App() {
                         ["Platinum", calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum')],
                         ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
                         ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')],
-                        ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')]]
+                        ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')],
+                        ["Twitter", calcStockValueUSD(1, "Twitter")],
+                        ["FitBit", calcStockValueUSD(1, "FitBit")],
+                        ["GE", calcStockValueUSD(1, "GE")]]
                     } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d']}/>
                 </div>
                 <div>
                     <p>Total === ${calcTotal()}</p>
-                    <p>Crypto : Metal === {calcRatio()} : 1</p>
+                    <p>Stocks : Crypto : Metal === {calcStockRatio()} : {calcCryptoRatio()} : 1</p>
                 </div>
             </header>
         </div>
