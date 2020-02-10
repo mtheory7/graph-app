@@ -18,6 +18,8 @@ function App() {
     const TWITTER_USD = 37.13;
     const GE_USD = 12.88;
     const FITBIT_USD = 6.62;
+    const KGC_USD = 4.89;
+    const NEM_USD = 44.08;
 
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
@@ -64,6 +66,8 @@ function App() {
         if (share === "FitBit") return numberOfShares * FITBIT_USD;
         if (share === "Twitter") return numberOfShares * TWITTER_USD;
         if (share === "GE") return numberOfShares * GE_USD;
+        if (share === "Newmont") return numberOfShares * NEM_USD;
+        if (share === "Kinross") return numberOfShares * KGC_USD;
         return 0;
     }
 
@@ -120,9 +124,11 @@ function App() {
                         ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
                         ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')],
                         ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')],
+                        ["Newmont Corp", calcStockValueUSD(1, "Newmont")],
                         ["Twitter", calcStockValueUSD(1, "Twitter")],
+                        ["GE", calcStockValueUSD(1, "GE")],
                         ["FitBit", calcStockValueUSD(1, "FitBit")],
-                        ["GE", calcStockValueUSD(1, "GE")]]
+                        ["Kinross Gold Corp", calcStockValueUSD(1, "Kinross")]]
                     } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d', '#00acee', '#00B0B9', '#026cb6']}/>
                 </div>
                 <div>
