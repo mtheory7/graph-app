@@ -9,17 +9,16 @@ function App() {
     const [priceData, setPriceData] = useState({});
 
     // Prices
-    const TROY_OZT_USD_GOLD = 1572.88;
-    const TROY_OZT_USD_SILVER = 17.754;
-    const TROY_OZT_USD_PLATINUM = 960.83;
-    const BITCOIN_USD = 9910.00;
-    const ETHEREUM_USD = 224.41;
-    const DOGECOIN_USD = 0.00307209;
-    const TWITTER_USD = 36.48;
-    const GE_USD = 12.89;
-    const FITBIT_USD = 6.62;
-    const KGC_USD = 4.97;
-    const NEM_USD = 44.29;
+    const TROY_OZT_USD_GOLD = 1573.53;
+    const TROY_OZT_USD_SILVER = 17.706;
+    const TROY_OZT_USD_PLATINUM = 966.66;
+    const BITCOIN_USD = 9884.89;
+    const ETHEREUM_USD = 223.68;
+    const DOGECOIN_USD = 0.00296641;
+    const TWITTER_USD = 35.82;
+    const GE_USD = 12.92;
+    const KGC_USD = 5.04;
+    const NEM_USD = 44.54;
 
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
@@ -63,7 +62,6 @@ function App() {
     }
 
     function calcStockValueUSD(numberOfShares, share) {
-        if (share === "FitBit") return numberOfShares * FITBIT_USD;
         if (share === "Twitter") return numberOfShares * TWITTER_USD;
         if (share === "GE") return numberOfShares * GE_USD;
         if (share === "Newmont") return numberOfShares * NEM_USD;
@@ -89,8 +87,8 @@ function App() {
 
     function calcStockTotal() {
         return parseFloat(
-            calcStockValueUSD(1, "Twitter") + calcStockValueUSD(1, "GE") + calcStockValueUSD(1, "FitBit")
-            + calcStockValueUSD(1, "Newmont") + calcStockValueUSD(1, "Kinross")
+            calcStockValueUSD(1, "Twitter") + calcStockValueUSD(1, "GE")
+            + calcStockValueUSD(1, "Newmont") + calcStockValueUSD(2, "Kinross")
         ).toFixed(2);
     }
 
@@ -128,9 +126,8 @@ function App() {
                         ["Newmont Corp", calcStockValueUSD(1, "Newmont")],
                         ["Twitter", calcStockValueUSD(1, "Twitter")],
                         ["GE", calcStockValueUSD(1, "GE")],
-                        ["FitBit", calcStockValueUSD(1, "FitBit")],
-                        ["Kinross Gold Corp", calcStockValueUSD(1, "Kinross")]]
-                    } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d', '#ead695', '#00acee', '#026cb6', '#00B0B9', '#95791d']}/>
+                        ["Kinross Gold Corp", calcStockValueUSD(2, "Kinross")]]
+                    } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d', '#ead695', '#00acee', '#026cb6', '#95791d']}/>
                 </div>
                 <div>
                     <p>Total: ${calcTotal()}</p>
