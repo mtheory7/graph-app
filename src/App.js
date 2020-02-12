@@ -70,7 +70,9 @@ function App() {
     }
 
     function calcTotal() {
-        return +calcMetalTotal() + +calcStockTotal() + +calcCryptoTotal();
+        return parseFloat(
+            +calcMetalTotal() + +calcStockTotal() + +calcCryptoTotal()
+        ).toFixed(2);
     }
 
     function calcMetalTotal() {
