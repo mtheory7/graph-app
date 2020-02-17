@@ -12,9 +12,9 @@ function App() {
     const TROY_OZT_USD_GOLD = 1583.60;
     const TROY_OZT_USD_SILVER = 17.734;
     const TROY_OZT_USD_PLATINUM = 965.25;
-    const BITCOIN_USD = 9933.63;
-    const ETHEREUM_USD = 267.12;
-    const DOGECOIN_USD = 0.00287702;
+    const BITCOIN_USD = 9893.96;
+    const ETHEREUM_USD = 256.89;
+    const DOGECOIN_USD = 0.00276931;
     const TWITTER_USD = 36.91;
     const GE_USD = 12.83;
     const KGC_USD = 5.05;
@@ -27,7 +27,7 @@ function App() {
     const GRAMS_OF_GOLD = 16.38;
     const GRAMS_OF_SILVER = 715.37;
     const GRAMS_OF_PLATINUM = 4.35;
-    const BITCOIN = 0.07023957;
+    const BITCOIN = 0.05782007;
     const ETHEREUM = 1.1;
     const DOGECOIN = 10000;
 
