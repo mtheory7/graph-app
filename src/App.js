@@ -27,7 +27,7 @@ function App() {
     const GRAMS_OF_GOLD = 16.38;
     const GRAMS_OF_SILVER = 995.3112576; // 32 ozt
     const GRAMS_OF_PLATINUM = 4.35;
-    const BITCOIN = 0.00919488;
+    const BITCOIN = 0.02;
     const ETHEREUM = 1.1;
     const DOGECOIN = 10000;
 
