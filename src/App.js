@@ -6,6 +6,10 @@ import './App.css';
 
 function App() {
 
+    const divStyle = {
+        fontSize: '10px',
+    };
+
     const [priceData, setPriceData] = useState({});
 
     // Prices
@@ -131,7 +135,7 @@ function App() {
                         ["Kinross Gold Corp", calcStockValueUSD(2, "Kinross")]]
                     } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d', '#ead695', '#00acee', '#026cb6', '#95791d']}/>
                 </div>
-                <div>
+                <div style={divStyle}>
                     <p>Total: ${calcTotal()}</p>
                     <p>Stocks: ${calcStockTotal()}</p>
                     <p>Crypto: ${calcCryptoTotal()}</p>
