@@ -13,12 +13,12 @@ function App() {
     const [priceData, setPriceData] = useState({});
 
     // Prices
-    const TROY_OZT_USD_GOLD = 1576.00;
-    const TROY_OZT_USD_SILVER = 15.800;
-    const TROY_OZT_USD_PLATINUM = 760.05;
-    const BITCOIN_USD = 5619.68;
-    const ETHEREUM_USD = 127.28;
-    const DOGECOIN_USD = 0.00163187;
+    const TROY_OZT_USD_GOLD = 1564.08;
+    const TROY_OZT_USD_SILVER = 15.475;
+    const TROY_OZT_USD_PLATINUM = 774.34;
+    const BITCOIN_USD = 5645.09;
+    const ETHEREUM_USD = 133.92;
+    const DOGECOIN_USD = 0.00158039;
     const TWITTER_USD = 28.45;
     const GE_USD = 7.40;
     const KGC_USD = 4.07;
@@ -31,8 +31,8 @@ function App() {
     const GRAMS_OF_GOLD = 16.38;
     const GRAMS_OF_SILVER = 1088.621688; // 35 ozt
     const GRAMS_OF_PLATINUM = 4.35;
-    const BITCOIN = 0.03;
-    const ETHEREUM = 1.1;
+    const BITCOIN = 0.05;
+    const ETHEREUM = 1.5;
     const DOGECOIN = 10000;
 
     function calcCryptoValueUSD(amount, cryptoType) {
