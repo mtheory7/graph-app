@@ -13,16 +13,16 @@ function App() {
     const [priceData, setPriceData] = useState({});
 
     // Prices
-    const TROY_OZT_USD_GOLD = 1518.45;
-    const TROY_OZT_USD_SILVER = 12.848;
-    const TROY_OZT_USD_PLATINUM = 625.55;
-    const BITCOIN_USD = 6353.02;
-    const ETHEREUM_USD = 132.96;
-    const DOGECOIN_USD = 0.00178056;
-    const TWITTER_USD = 23.95;
-    const GE_USD = 6.52;
-    const KGC_USD = 3.61;
-    const NEM_USD = 40.56;
+    const TROY_OZT_USD_GOLD = 1599.50;
+    const TROY_OZT_USD_SILVER = 13.828;
+    const TROY_OZT_USD_PLATINUM = 683.89;
+    const BITCOIN_USD = 6619.63;
+    const ETHEREUM_USD = 137.72;
+    const DOGECOIN_USD = 0.00185344;
+    const TWITTER_USD = 24.69;
+    const GE_USD = 6.11;
+    const KGC_USD = 3.95;
+    const NEM_USD = 41.66;
 
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
