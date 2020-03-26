@@ -32,6 +32,8 @@ function App() {
     const BITCOIN = 0.1;
     const ETHEREUM = 1.5;
     const DOGECOIN = 15000;
+    const KGC_SHARES = 9;
+    const NEM_SHARES = 1;
 
     function calcCryptoValueUSD(amount, cryptoType) {
         let pricePerAsset = 0;
@@ -63,9 +65,9 @@ function App() {
         return ((numberOfGrams / GRAMS_IN_OZT) * pricePerOzt);
     }
 
-    function calcStockValueUSD(numberOfShares, share) {
-        if (share === "Newmont") return numberOfShares * NEM_USD;
-        if (share === "Kinross") return numberOfShares * KGC_USD;
+    function calcStockValueUSD(share) {
+        if (share === "Newmont") return NEM_SHARES * NEM_USD;
+        if (share === "Kinross") return KGC_SHARES * KGC_USD;
         return 0;
     }
 
@@ -89,7 +91,7 @@ function App() {
 
     function calcStockTotal() {
         return parseFloat(
-            calcStockValueUSD(1, "Newmont") + calcStockValueUSD(2, "Kinross")
+            calcStockValueUSD("Newmont") + calcStockValueUSD("Kinross")
         ).toFixed(2);
     }
 
@@ -124,8 +126,8 @@ function App() {
                         ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
                         ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')],
                         ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')],
-                        ["Newmont Corp", calcStockValueUSD(1, "Newmont")],
-                        ["Kinross Gold Corp", calcStockValueUSD(9, "Kinross")]]
+                        ["Newmont Corp", calcStockValueUSD("Newmont")],
+                        ["Kinross Gold Corp", calcStockValueUSD("Kinross")]]
                     } colors={['#d4af37', '#e5e4e2', '#c0c0c0', '#ff9900', '#e1b303', '#3c3c3d', '#ead695', '#95791d']}/>
                 </div>
                 <div style={divStyle}>
