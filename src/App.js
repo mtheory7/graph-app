@@ -25,8 +25,8 @@ function App() {
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
 
-    // Assets               // 2 x 1/10ozt       // 1 x 1/4ozt        // 1 x 5g            // 1 x 0.5g
-    const GRAMS_OF_GOLD = ( (GRAMS_IN_OZT / 5) + (GRAMS_IN_OZT / 4) + (5 / GRAMS_IN_OZT) + (0.5 / GRAMS_IN_OZT) );
+    // Assets               // 2 x 1/10ozt       // 1 x 1/4ozt        // 1 x 5g && 1 x 0.5g
+    const GRAMS_OF_GOLD = ( (GRAMS_IN_OZT / 5) + (GRAMS_IN_OZT / 4) + (5.5) );
     const GRAMS_OF_SILVER = (36 * GRAMS_IN_OZT);
     const GRAMS_OF_PLATINUM = 4.35;
     const BITCOIN = 0.08;
