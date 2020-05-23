@@ -120,9 +120,9 @@ function App() {
                 <div>
                     <h3>Portfolio</h3>
                     <PieChart round={2} zeros={true} prefix="$" data={[
-                        ["Gold", calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold')],
-                        ["Silver", calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver')],
-                        ["Platinum", calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum')],
+                        ["Gold-"+GRAMS_OF_GOLD+"g", calcMetalValueUSD(GRAMS_OF_GOLD, 'Gold')],
+                        ["Silver-"+GRAMS_OF_SILVER+"g", calcMetalValueUSD(GRAMS_OF_SILVER, 'Silver')],
+                        ["Platinum-"+GRAMS_OF_PLATINUM+"g", calcMetalValueUSD(GRAMS_OF_PLATINUM, 'Platinum')],
                         ["Bitcoin", calcCryptoValueUSD(BITCOIN, 'Bitcoin')],
                         ["Dogecoin", calcCryptoValueUSD(DOGECOIN, 'Dogecoin')],
                         ["Ethereum", calcCryptoValueUSD(ETHEREUM, 'Ethereum')],
