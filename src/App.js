@@ -28,7 +28,7 @@ function App() {
     // Assets               // 2 x 1/10ozt       // 1 x 1/4ozt        // 1 x 5g && 1 x 0.5g && 12.39g
     const GRAMS_OF_GOLD = ( (GRAMS_IN_OZT / 5) + (GRAMS_IN_OZT / 4) + (5.5) + (12.38) );
                             // 35 ozt of .9999     // 7.81 ozt of .900 constitutional
-    const GRAMS_OF_SILVER = ( (35 * GRAMS_IN_OZT) + (7.81 * 0.9) );
+    const GRAMS_OF_SILVER = ( (35 * GRAMS_IN_OZT) + (7.81 * 0.9 * GRAMS_IN_OZT) );
     const GRAMS_OF_PLATINUM = 4.35;
     const BITCOIN = 0.02;
     const ETHEREUM = 0.03;
