@@ -13,25 +13,25 @@ function App() {
     const [priceData, setPriceData] = useState({});
 
     // Prices
-    const TROY_OZT_USD_GOLD = 1847.80;
-    const TROY_OZT_USD_SILVER = 25.418;
-    const TROY_OZT_USD_PLATINUM = 1063.00;
-    const BITCOIN_USD = 39290.80;
-    const ETHEREUM_USD = 1301.19;
-    const DOGECOIN_USD = 0.00998646;
-    const KGC_USD = 7.38;
-    const NEM_USD = 62.79;
+    const TROY_OZT_USD_GOLD = 1726.16;
+    const TROY_OZT_USD_SILVER = 26.445;
+    const TROY_OZT_USD_PLATINUM = 1192.52;
+    const BITCOIN_USD = 48600.00;
+    const ETHEREUM_USD = 1554.01;
+    const DOGECOIN_USD = 0.0509724;
+    const KGC_USD = 6.29;
+    const NEM_USD = 55.29;
 
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
 
-    // Assets               // 2 x 1/10ozt       // 1 x 1/4ozt        // 1 x 5g && 1 x 0.5g && 12.39g
-    const GRAMS_OF_GOLD = ( (GRAMS_IN_OZT / 5) + (GRAMS_IN_OZT / 4) + (5.5) + (12.37) );
+    // Assets               // 1ozt PAMP    // 2 x 1/10ozt       // 1 x 1/4ozt        // 1 x 5g && 1 x 0.5g && 12.39g
+    const GRAMS_OF_GOLD = ( GRAMS_IN_OZT + (GRAMS_IN_OZT / 5) + (GRAMS_IN_OZT / 4) + (5.5) + (12.37) );
                             // 35 ozt of .9999     // 242.779 grams of .900 constitutional
     const GRAMS_OF_SILVER = ( (35 * GRAMS_IN_OZT) + (242.779 * 0.9) );
     const GRAMS_OF_PLATINUM = 4.35;
-    const BITCOIN = 0.028;
-    const ETHEREUM = 0.24784;
+    const BITCOIN = 0.0439;
+    const ETHEREUM = 0.5460347;
     const DOGECOIN = 10000;
     const KGC_SHARES = 1;
     const NEM_SHARES = 1;
