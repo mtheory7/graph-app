@@ -25,9 +25,9 @@ function App() {
     // Conversion factors
     const GRAMS_IN_OZT = 31.1034768;
 
-    // Assets               // 1ozt PAMP    // 2 x 1/10ozt       // 1 x 1/4ozt        // 1 x 5g && 1 x 0.5g && 12.39g     // 7.98g 22kt purity
+    // Assets               // 1ozt PAMP    // 2 x 1/10ozt       // 1 x 1/4ozt        // 1 x 5g && 1 x 0.5g && 12.36g     // 7.98g 22kt purity
     const GRAMS_OF_GOLD = ( GRAMS_IN_OZT + (GRAMS_IN_OZT / 5) + (GRAMS_IN_OZT / 4) + (5.5) + (12.36)                   + (7.98 * (22/24)));
-                            // 35 ozt of .9999     // 242.779 grams of .900 constitutional
+                            // 37 ozt of .9999     // 242.779 grams of .900 constitutional
     const GRAMS_OF_SILVER = ( (37 * GRAMS_IN_OZT) + (242.779 * 0.9) );
     const GRAMS_OF_PLATINUM = 4.35;
     const BITCOIN = 0.06;
