@@ -1,0 +1,7 @@
+
+Qjavascript:S1128")Remove this unused import of 'useEffect'.(÷Ñ†œÿÿÿÿÿ8¸Íýáþ-
+_javascript:S1854"<Remove this useless assignment to local variable "priceData"(ëÜµ·8¸Íýáþ-
+ijavascript:UnusedVariable"=Remove the declaration of the unused 'setPriceData' variable.(ëÜµ·8¸Íýáþ-
+bjavascript:S1854"?Remove this useless assignment to local variable "setPriceData"(ëÜµ·8¸Íýáþ-
+fjavascript:UnusedVariable":Remove the declaration of the unused 'priceData' variable.(ëÜµ·8¸Íýáþ-
+Mjavascript:S1128"%Remove this unused import of 'axios'.(ÒÁæÅúÿÿÿÿ8¸Íýáþ-
